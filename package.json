@@ -2,7 +2,7 @@
   "name": "meanpay",
   "version": "1.0.0",
   "description": "Project 4 - Meanpay",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,9 +18,18 @@
   },
   "homepage": "https://github.com/brown2206/meanpay#readme",
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
-    "hbs": "^4.0.1",
-    "mongoose": "^4.7.0"
+    "express-handlebars": "^3.0.0",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.14.2",
+    "express-validator": "^3.0.0",
+    "mongoose": "^4.7.0",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0"
   }
 }
