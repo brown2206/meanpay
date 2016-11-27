@@ -18,7 +18,7 @@ var LocalStrategy = require("passport-local").Strategy
 
 app.set("view engine","hbs")
 app.get("/", (req, res) => {
-  res.send("Hello World & Lil' Mama abcde + Hangtime!!!")
+  res.send("Hello World & Lil' Mama XYZ123 + Hangtime!!!")
 })
 
 app.use(cookieParser())
