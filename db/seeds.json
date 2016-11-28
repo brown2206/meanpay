@@ -3,10 +3,10 @@
     "name": "General Electric",
     "address": "1234 Main Street",
     "account_no": "987654",
-    "due_date":"",
+    "due_date": "09.30.2016",
     "amount_due": 488,
     "paid": false,
-    "last_payment_date":"",
+    "last_payment_date":"08.30.2016",
     "notes": "test"
   }
 ]
