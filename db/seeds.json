@@ -8,5 +8,15 @@
     "paid": false,
     "last_payment_date":"08.30.2016",
     "notes": "test"
+  },
+  {
+    "name": "Honda Finance",
+    "address": "8873 Honeycut Street",
+    "account_no": "54321",
+    "due_date": "09.30.2016",
+    "amount_due": 375,
+    "paid": false,
+    "last_payment_date":"08.30.2016",
+    "notes": "test2"
   }
 ]
