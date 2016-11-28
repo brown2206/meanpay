@@ -1,12 +1,29 @@
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/users')
 
-var db = mongoose.connection
-
-db.on('error', err => {
-  console.log(err)
+var PayeeSchema = mongoose.Schema({
+  name: String,
+  address: String,
+  account_no: Number,
+  due_date: { type: Date, default: Date.now },
+  amount_due: Number,
+  paid: { type: Boolean, default: false },
+  last_payment_date: { type: Date, default: Date.now },
+  notes: String
 })
 
-db.once('open', () => {
-  console.log("database has been connected!")
-})
+mongoose.model("Payee", PayeeSchema)
+mongoose.Promise = global.Promise
+
+mongoose.connect('mongodb://localhost/meanpay')
+
+module.exports = mongoose
+
+// var db = mongoose.connection
+//
+// db.on('error', err => {
+//   console.log(err)
+// })
+//
+// db.once('open', () => {
+//   console.log("database has been connected!")
+// })

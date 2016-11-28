@@ -1,0 +1,12 @@
+[
+  {
+    "name": "General Electric",
+    "address": "1234 Main Street",
+    "account_no": "987654",
+    "due_date":"",
+    "amount_due": 488,
+    "paid": false,
+    "last_payment_date":"",
+    "notes": "test"
+  }
+]
