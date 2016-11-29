@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 
-var PayeeSchema = mongoose.Schema({
+var PayeeSchema = new mongoose.Schema({
   name: String,
   address: String,
   account_no: Number,
@@ -11,9 +11,7 @@ var PayeeSchema = mongoose.Schema({
   notes: String
 })
 
-mongoose.model("Payee", PayeeSchema)
-mongoose.Promise = global.Promise
-
+mongoose.model('Payee', PayeeSchema)
 mongoose.connect('mongodb://localhost/meanpay')
 
 module.exports = mongoose

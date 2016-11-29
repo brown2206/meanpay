@@ -1,6 +1,6 @@
 var express = require("express")
 var hbs = require("express-handlebars")
-var mongoose = require("mongoose")
+var mongoose = require("./db/schema")
 var Payee = mongoose.model("Payee")
 var bodyParser = require("body-parser")
 
@@ -20,14 +20,25 @@ var app = express()
 // var payees = require("./routes/payees")
 
 app.set("view engine","hbs")
+app.engine(".hbs", hbs({
+  extname:        ".hbs",
+  partialsDir:    "views/",
+  layoutsDir:     "views/",
+  defaultLayout:  "layout-main"
+}));
 
-app.get("/", (req, res) => {
-  res.send("Hello World & Lil' Mama XYZ123 + Hangtime!!!")
+app.get("/", function(req, res){
+  res.render("app-welcome");
 })
+
+// app.get("/", (req, res) => {
+//   res.send("Hello World & Lil' Mama XYZ123 + Hangtime!!!")
+// })
 
 // app.use(cookieParser())
 
 app.use(bodyParser.urlencoded({extended: true})) //handle forms
+
 
 app.listen(3000, () => {
   console.log("app listening on port 3000")
