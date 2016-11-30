@@ -12,6 +12,8 @@ var PayeeSchema = new mongoose.Schema({
 })
 
 mongoose.model('Payee', PayeeSchema)
+mongoose.Promise = global.Promise
+
 mongoose.connect('mongodb://localhost/meanpay')
 
 module.exports = mongoose

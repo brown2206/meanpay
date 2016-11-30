@@ -31,6 +31,22 @@ app.get("/", function(req, res){
   res.render("app-welcome");
 })
 
+app.get("/payees", function(req, res){
+  Payee.find({}).then(payees => {
+    res.render("payees-index", {
+      payees,
+    });
+  })
+});
+
+app.get("/payees/:name", function(req, res){
+  Payee.findOne({name: req.params.name}).then(function(payee){
+    res.render("payees-show", {
+      payee
+    })
+  });
+});
+
 // app.get("/", (req, res) => {
 //   res.send("Hello World & Lil' Mama XYZ123 + Hangtime!!!")
 // })

@@ -1,0 +1,7 @@
+<h2>{{payees.length}} payees</h2>
+{{#each payees as |payee index|}}
+<h3>
+  <a href="/payees/{{payee.name}}">{{payee.name}} Bill</a>
+   <!-- {{candidate.year}}</a> -->
+</h3>
+{{/each}}
