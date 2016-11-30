@@ -27,6 +27,8 @@ app.engine(".hbs", hbs({
   defaultLayout:  "layout-main"
 }));
 
+app.use(bodyParser.urlencoded({extended: true})) //handle forms
+
 app.get("/", function(req, res){
   res.render("app-welcome");
 })
@@ -47,14 +49,23 @@ app.get("/payees/:name", function(req, res){
   });
 });
 
-// app.get("/", (req, res) => {
-//   res.send("Hello World & Lil' Mama XYZ123 + Hangtime!!!")
-// })
+app.post("/payees", function(req, res){
+  Payee.create(req.body.payee).then(function(payee){
+    res.redirect("/payees/" + payee.name)
+  })
+})
 
-// app.use(cookieParser())
+app.post("/payees/:name", function(req, res){
+  Payee.findOneAndUpdate({name: req.params.name}, req.body.payee, {new: true}).then(function(payee){
+    res.redirect("/payees/" + payee.name)
+  })
+})
 
-app.use(bodyParser.urlencoded({extended: true})) //handle forms
-
+app.post("/payees/:name/delete", function(req, res){
+  Payee.findOneAndRemove({name: req.params.name}).then(function(){
+    res.redirect("/payees")
+  })
+})
 
 app.listen(3000, () => {
   console.log("app listening on port 3000")

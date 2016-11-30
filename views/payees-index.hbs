@@ -5,3 +5,15 @@
    <!-- {{candidate.year}}</a> -->
 </h3>
 {{/each}}
+
+<form action="/payees" method="post">
+  <input type="text" name="payee[name]" placeholder="Name" />
+  <input type="text" name="payee[address]" placeholder="Address" />
+  <input type="number" name="payee[account_no]" placeholder="Account #" />
+  <input type="date" name="payee[due_date]" placeholder="Due Date" />
+  <input type="number" name="payee[amount_due]" placeholder="Amount Due" />
+  <input type="checkbox" name="payee[paid]" placeholder="Paid" />
+  <input type="date" name="payee[last_payment_date]" placeholder="Last Payment Date" />
+  <input type="text" name="payee[notes]" placeholder="Notes" />
+  <button type="submit">Submit New Bill</button>
+</form>
