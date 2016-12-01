@@ -5,7 +5,7 @@ var PayeeSchema = new mongoose.Schema({
   address: String,
   account_no: Number,
   due_date: { type: Date, default: Date.now },
-  amount_due: Number,
+  amount_due: { type: Number },
   paid: { type: Boolean, default: false },
   last_payment_date: { type: Date, default: Date.now },
   notes: String
