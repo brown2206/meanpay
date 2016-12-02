@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Account No.</th>
+    <th>Due Date</th>
+    <th>Amount Due</th>
+    <th>Paid</th>
+    <th>Last Payment Date</th>
+    <th>Notes</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="pay in payee">
+      <td>{{pay.name}}</td>
+      <td>{{pay.address}}</td>
+      <td>{{pay.account_no}}</td>
+      <td>{{pay.due_date}}</td>
+      <td>{{pay.amount_due}}</td>
+      <td>{{pay.paid}}</td>
+      <td>{{pay.last_payment_date}}</td>
+      <td>{{pay.notes}}</td>
+    </tr>
+  </tbody>
+</table>
