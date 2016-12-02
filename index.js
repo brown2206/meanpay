@@ -11,6 +11,7 @@ var app = express()
 
 // Load the models
 app.models = require('./db/schema.js')
+app.use(express.static("public"));
 
 // Load the routes
 // var routes = require('./routes')
@@ -49,10 +50,6 @@ app.delete('/Payee/:name', function(req, res){
 
 app.put('/Payee/:name',(req,res) => {
   Payee.findOneAndUpdate({name: req.params.name}, req.body, {new: true}).then(payee => res.json(payee))
-})
-
-app.get('/*',(req,res) => {
-  res.render('layout-main')
 })
 
 app.listen(3000, () => {

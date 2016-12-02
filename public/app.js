@@ -16,7 +16,7 @@ angular
     PayeeIndexControllerFunction
   ])
 
-  function Router ($stateProvider) {
+  function RouterFunction ($stateProvider) {
     $stateProvider
       .state("welcome", {
         url: "/",
