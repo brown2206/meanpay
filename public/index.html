@@ -7,7 +7,7 @@
     <title>Meanpay</title>
 </head>
 <body>
-    <div class="container" ng-controller="billsCtrl">
+    <div class="container" ng-controller="billsCtrl as vm">
       <h1>Meanpay - Bills</h1>
 
       <table class="table">
@@ -23,9 +23,20 @@
             <th>Notes</th>
           </tr>
         </thead>
+        <tbody>
+          <tr ng-repeat="payee in vm.payees">
+            <td>{{payee.name}}</td>
+            <td>{{payee.address}}</td>
+            <td>{{payee.account_no}}</td>
+            <td>{{payee.due_date}}</td>
+            <td>{{payee.amount_due}}</td>
+            <td>{{payee.paid}}</td>
+            <td>{{payee.last_payment_date}}</td>
+            <td>{{payee.notes}}</td>
+          </tr>
       </table>
     </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
-<script src="controllers/controller.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
